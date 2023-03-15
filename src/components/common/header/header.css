@@ -1,0 +1,21 @@
+.head {
+    cursor: pointer;
+  }
+  .head .logo img {
+    width: 250px;
+  }
+  header {
+    background-color: #fff;
+    color: #000;
+  }
+  header li {
+    margin-right: 30px;
+    transition: 0.5s;
+  }
+  header li a:hover {
+    color: rgb(98, 179, 245);
+    cursor: pointer;
+  }
+  header a {
+    color: #000;
+  }
