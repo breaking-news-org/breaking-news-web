@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { hero } from '../../../defaultData'
+import Card from './Card'
+import './hero.css'
 
 const Hero = () => {
   const [items, setItems] = useState(hero)
@@ -7,7 +9,13 @@ const Hero = () => {
     <>
         <section className="hero">
             <div className="container">
-                {items}
+                {items.map((item) => {
+                  return (
+                    <>
+                      <Card key={item.id} item={item}/>
+                    </>
+                  )
+                })}
             </div>
         </section>
     </>
