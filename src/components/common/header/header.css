@@ -5,9 +5,8 @@
     width: 250px;
   }
   header {
-    box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
   }
   header li {
     margin-right: 30px;
@@ -18,5 +17,5 @@
     cursor: pointer;
   }
   header a {
-    color: #000;
+    color: #fff;
   }

@@ -14,6 +14,7 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+    border-radius: 1%;
     top: 0;
     left: 0;
     z-index: -1;
@@ -65,15 +66,18 @@
     font-size: 28px;
   }
   .hero .box:nth-child(1) .category {
-    background-color: rgb(108, 184, 247);
+    background-color: black;
   }
   .hero .box:nth-child(2) .category {
-    background-color: rgb(108, 184, 247);
+    background-color: black;
+  }
+  .hero .box:nth-child(3) .category {
+    background-color: black;
   }
   .hero .box:nth-child(4) .category {
-    background-color: rgb(108, 184, 247);
+    background-color: black;
   }
-  /* @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .hero .container {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
@@ -104,4 +108,4 @@
       grid-row-start: 15;
       grid-row-end: 20;
     }
-  } */
+  }
