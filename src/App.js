@@ -6,12 +6,9 @@ import { useAuth } from './hooks/auth.hook';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
-  // const {refreshToken, login, logout, accessToken} = useAuth()
-  const auth = (0 , useAuth)();
-  const {refreshToken, login, logout, accessToken} = auth ? auth : {};
-    
+  const auth = useAuth()
+  const {refreshToken, login, logout, accessToken} = auth
   const isAuthenticated = !!refreshToken
-  // const isAuthenticated = false
   const routes = useRoutes(isAuthenticated)
 
   return (

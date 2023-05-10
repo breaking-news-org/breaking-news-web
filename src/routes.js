@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes, Route, Navigate} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import { CreatePage } from "./pages/CreateNews";
 import { NewsPage } from "./pages/NewsPage";
 import { DetailPage } from "./pages/NewsDetail";
@@ -14,7 +14,8 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/create" exact element={<CreatePage />} />
                 
                 <Route path="/detail/:id" element={<DetailPage />}/>
-                <Navigate to="/create"/>
+
+                <Route path="/" exact element={<CreatePage />}/>
             </Routes>
         )
     }
