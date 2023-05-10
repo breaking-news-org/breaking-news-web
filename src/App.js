@@ -1,20 +1,25 @@
-import './App.css'
-import React from 'react'
-import Header from './components/common/header/Header'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Homepages from './components/home/Homepages'
+import './App.css';
+import 'materialize-css'
+import { BrowserRouter } from 'react-router-dom';
+import {useRoutes} from './routes'
+// import { useAuth } from './hooks/auth.hook';
+// import { AuthContext } from './context/AuthContext';
 
-const App = () => {
+function App() {
+  // const {token, login, logout, userId} = useAuth()
+  // const isAuthenticated = !!token
+  const routes = useRoutes(false)
   return (
-    <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route path='/' component={Homepages} />
-        </Switch>
-      </Router>
-    </>
-  )
+    // <AuthContext.Provider value={{
+    //   token, login, logout, userId, isAuthenticated
+    // }}>
+    <BrowserRouter>
+      <div className='container'>
+        {routes}
+      </div>
+    </BrowserRouter>
+    // </AuthContext.Provider>
+  );
 }
 
-export default App
+export default App;
