@@ -18,6 +18,10 @@ export const AuthPage = () => {
         clearError()
     }, [error, message, clearError])
 
+    useEffect(() =>  {
+        window.M.updateTextFields()
+    }, [])
+
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value})
     }
@@ -47,26 +51,35 @@ export const AuthPage = () => {
                         <span className="card-title">Authorization</span>
                         <div>
                             <div className="input-field">
-                                <input placeholder="Enter username"
-                                id="userName" type="text" name="userName"
-                                className="yellow-input"
-                                onChange={changeHandler}/>
+                                <input 
+                                    placeholder="Enter username"
+                                    id="userName" type="text" name="userName"
+                                    className="yellow-input"
+                                    onChange={changeHandler}
+                                    value={form.userName}
+                                />
                                 <label htmlFor="userName"></label>
                             </div>
 
                             <div className="input-field">
-                                <input placeholder="Enter authorname"
-                                id="authorName" type="text" name="authorName"
-                                className="yellow-input"
-                                onChange={changeHandler}/>
+                                <input 
+                                    placeholder="Enter authorname"
+                                    id="authorName" type="text" name="authorName"
+                                    className="yellow-input"
+                                    onChange={changeHandler}
+                                    value={form.authorName}
+                                />
                                 <label htmlFor="authorName"></label>
                             </div>
 
                             <div className="input-field">
-                                <input placeholder="Enter password"
-                                id="password" type="password" name="password"
-                                className="yellow-input"
-                                onChange={changeHandler}/>
+                                <input 
+                                    placeholder="Enter password"
+                                    id="password" type="password" name="password"
+                                    className="yellow-input"
+                                    onChange={changeHandler}
+                                    value={form.password}
+                                />
                                 <label htmlFor="password"></label>
                             </div>
                         </div>
