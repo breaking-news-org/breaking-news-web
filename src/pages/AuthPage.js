@@ -1,11 +1,10 @@
-// import React, {useEffect, useState, useContext} from "react";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
-// import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export const AuthPage = () => {
-    // const auth = useContext(AuthContext)
+    const auth = useContext(AuthContext)
     const message = useMessage()
     const {loading, error, request, clearError} = useHttp()
     const [form, setForm] = useState({
@@ -33,8 +32,9 @@ export const AuthPage = () => {
     const loginHandler = async () => {
         try {
             // api1/auth/login
-            const data = await request('/api1/auth/login', 'POST', {...form})
-            // auth.login(data.token, data.userId)
+            delete form.authorName
+            const data = await request('/api1/user/login', 'POST', {...form})
+            auth.login(data.Right.refreshToken, data.Right.accessToken)
         } catch (e) {}
     }
 
