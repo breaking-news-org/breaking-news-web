@@ -5,6 +5,7 @@ const storageName = 'userData'
 
 export const useAuth = () => {
     const [refreshToken, setRefreshToken] = useState(null)
+    const [ready, setReady] = useState(false)
     const [accessToken, setAccessToken] = useState(null)
 
     const login = useCallback((ref_token, acc_token) => {
@@ -28,7 +29,8 @@ export const useAuth = () => {
         if (data && data.refreshToken) {
             login(data.refreshToken, data.accessToken)
         }
+        setReady(true)
     }, [login])
 
-    return {login, logout, refreshToken, accessToken}
+    return {login, logout, refreshToken, accessToken, ready}
 }

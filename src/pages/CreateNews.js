@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const CreatePage = () => {
     const auth = useContext(AuthContext)
     const {request} = useHttp()
+    let navigator = useNavigate()
     const [newsform, setNewsForm] = useState({
         title: '',
         text: '',
@@ -31,9 +33,11 @@ export const CreatePage = () => {
         }
         console.log(final_body)
         try {
-            await request('/api1/news/create', 'POST', {...final_body}, {
+            const data = await request('/api1/news/create', 'POST', {...final_body}, {
                 Authorization: `Bearer ${auth.accessToken}`
             })
+            // navigator(`/detail/${data.Left}`)
+            navigator('/')
         } catch (e) {}
     }
 
