@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 import random
 
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 driver.implicitly_wait(10) # seconds
 
 start = time.time()
