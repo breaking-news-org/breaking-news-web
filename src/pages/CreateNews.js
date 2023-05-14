@@ -12,7 +12,7 @@ export const CreatePage = () => {
         text: '',
         category: '',
         images: [],
-        isPublished: false
+        isPublished: true
     })
 
     const changeHandlerForNews = event => {
@@ -36,7 +36,9 @@ export const CreatePage = () => {
             const data = await request('/api1/news/create', 'POST', {...final_body}, {
                 Authorization: `Bearer ${auth.accessToken}`
             })
-            // navigator(`/detail/${data.Left}`)
+            if (data.Right) {
+                console.log("news created")
+            }
             navigator('/')
         } catch (e) {}
     }
@@ -62,7 +64,7 @@ export const CreatePage = () => {
                 </div>
 
                 <div className="input-field">
-                    <input placeholder="Enter category"
+                    <input placeholder="Enter category from 1 to 6"
                     id="ncategory" type="number" name="category"
                     // value={newsform.category}
                     onChange={changeHandlerForNews}/>

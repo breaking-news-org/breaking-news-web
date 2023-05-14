@@ -30,6 +30,7 @@ export const AuthPage = () => {
         try {
             // api1/auth/register
             const data = await request('/api1/user/register', 'POST', {...form})
+            auth.login(data.Right.refreshToken, data.Right.accessToken)
         } catch (e) {}
     }
 

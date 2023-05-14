@@ -1,0 +1,72 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.box .box-child {
+    padding: 40px 0 40px 0;
+}
+
+.left {
+    width: 400px;
+    height: auto;
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: black;
+    flex: 50%;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* position: absolute; */
+}
+
+.right {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    color: black;
+    flex: 50%;  
+    overflow:hidden;  
+}
+
+.left .text {
+font-weight: 500;
+margin-bottom: 20px;
+font-size: 26px;
+}
+
+.right .text {
+    font-weight: 500;
+    font-size: 28px;
+}
+/* .box-child .author span {
+font-size: 14px;
+margin-right: 20px;
+}
+.box-child .category span {
+font-size: 14px;
+margin-right: 20px;
+}
+.box-child .title span {
+font-size: 14px;
+margin-right: 20px;
+} */
+
+.bottom-right {
+position: absolute;
+bottom: 8px;
+right: 16px;
+}
+
+/* .box-child .text {
+position: absolute;
+bottom: 30px;
+} */

@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {NewsCard} from './NewsCard'
+import './newlist.css'
 
 export const NewsList = ({ newslist }) => {
   if (!newslist.length) {
@@ -7,30 +8,34 @@ export const NewsList = ({ newslist }) => {
   }
 
   return (
-    <table>
-      <thead>
-      <tr>
-        <th>№</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Open</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      { newslist.map((post, index) => {
+    <section className='hero'>
+      <div className='container'>
+      {newslist.map((item) => {
         return (
-          <tr key={post._id}>
-            <td>{index + 1}</td>
-            <td>{post.title}</td>
-            <td>{post.category}</td>
-            <td>
-              <Link to={`/detail/${post._id}`}>Open</Link>
-            </td>
-          </tr>
+          <>
+            <div className='box'>
+              <div className='left box-child'>
+                <div className="img">
+                  <img src={item.images[0]} alt="" />
+                  <div className="text bottom-right">
+                    <span className="title">{item.title}</span>      
+                    <div className="author">
+                      <span>by {item.authorName}</span>
+                      <span>{item.createdAt.slice(0, 10)}</span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div className='right box-child'>
+                <p className='bottom-right'>{item.text}</p>
+              </div>
+            </div>
+            {/* <NewsCard key={item.id} news={item} /> */}
+          </>
         )
-      }) }
-      </tbody>
-    </table>
+      })}
+      </div>
+    </section>
   )
 }
