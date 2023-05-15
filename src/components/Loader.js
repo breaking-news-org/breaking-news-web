@@ -8,7 +8,7 @@ export const Loader = () => (
                     <div className="circle"></div>
                 </div>
                 <div className="gap-patch">
-                    <div className="circle"></div>
+                    <div className="circle">middle</div>
                 </div>
                 <div className="circle-clipper right">
                     <div className="circle"></div>
